@@ -9,6 +9,9 @@
     <meta name="description" content="渡辺穂高ポートフォリオ">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/android-chrome-256x256.png">
 </head>
 
 
@@ -16,7 +19,7 @@
 <body>
     <!-- ヘッダー -->
     <header>
-        <div class="header_wrap">
+        <div class="header_wrap" id="header_wrap">
             <h1 class="header_logo"><img src="images/third_one_nine_logo@2x.png" alt="ロゴ"></h1>
             <div class="sp_btn"><span></span></div>
             <nav class="sp_nav">
@@ -103,7 +106,7 @@
                         <img src="images/design@2x.png" alt="Web site design タイトル">
                     </p>
                     <p class="service_text">
-                        目的や想いを届けるWebサイト・ライティングページ(LP)のデザインを作成いたします。
+                        ヒアリングを重視し、目的や想いを届けるWebサイト・ランディングページ(LP)のデザインを作成いたします。
                     </p>
                 </div>
                 <div class="box">
@@ -146,7 +149,7 @@
                 <h3>●カフェサイト</h3>
                 <p>カテゴリ・・・ランディングページ
                     <br>
-                    ツール・・・・Illustrator / Photoshop
+                    ツール ・・・・Illustrator / Photoshop
                 </p>
             </div>
             <div class="work_block_item">
@@ -157,7 +160,7 @@
                 <h3>●筆耕</h3>
                 <p>カテゴリ・・・バナー
                     <br>
-                    ツール・・・・毛筆
+                    ツール ・・・・毛筆
                 </p>
             </div>
             <div class="work_block_item">
@@ -168,7 +171,7 @@
                 <h3>●キャンプフェス　バナー</h3>
                 <p>カテゴリ・・・バナー
                     <br>
-                    ツール・・・・Illustrator / Photoshop
+                    ツール ・・・・Illustrator / Photoshop
                 </p>
                 <h2 class="work_ttl">
                     <img src="images/work@2x.png" alt="work タイトル">
@@ -220,12 +223,26 @@
         </div>
     </footer>
 
+    <!-- ページトップボタン -->
+    <div class="pagetop">
+        <a href="#header_wrap"><img src="images/toppage.png" alt="上矢印"></a>
+    </div>
+
     <script>
         $(function () {
             //ここの中に記述
             $('.sp_btn, .sp_nav ul li').on('click', function () {
                 $('.sp_nav').fadeToggle();
                 $('.sp_btn').toggleClass('open');
+            });
+            // ページトップフェードイン
+            $('.pagetop').hide(); // デフォルトでボタンを隠しておく
+            $(window).on('scroll', function () { // ウィンドウをスクロールした時に発火
+                if ($(this).scrollTop() > 200) { // スクロール値が200以上になったら
+                    $('.pagetop').fadeIn(); // フェードイン
+                } else {
+                    $('.pagetop').fadeOut(); // フェードアウト
+                }
             });
         });
         // フェードイン
@@ -242,9 +259,6 @@
         });
         $(function () {
             load_effect();
-            $(window).scroll(function () {
-                scroll_effect();
-            });
         });
 
         //ふわっとロード

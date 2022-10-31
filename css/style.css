@@ -50,6 +50,10 @@ img {
     border: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* cssリセットここまで */
 
 /* フェードイン */
@@ -190,19 +194,23 @@ img {
 }
 
 .about_image_mountain {
-    text-align: right;
-    margin-right: -150px;
+    position: absolute;
+    left: 60%;
+    bottom: 0;
+    width: 40%;
+    overflow: hidden;
 }
 
 .about .about_image_mountain img {
-    width: 45%;
+    width: 100%;
+    min-width: 500px;
 }
 
 .about_ttl {
     position: absolute;
-    transform: rotate(90deg);
-    top: -55%;
-    right: -20%;
+    transform: translateX(77%) rotate(90deg);
+    top: -49%;
+    left: 65%;
     width: 270px;
     transform-origin: left;
 }
@@ -217,7 +225,7 @@ img {
 }
 
 .inner {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -225,14 +233,14 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 940px;
+    max-width: 940px;
     margin: 0 auto;
     padding: 30px 30px;
     background: #fff;
 }
 
 .inner .box {
-    width: 380px;
+    width: calc(100% / 3);
     padding-bottom: 10px;
     text-align: center;
     background-image: linear-gradient(
@@ -258,7 +266,7 @@ img {
 .service_ttl {
     transform: rotate(90deg);
     width: 270px;
-    margin-bottom: 70px;
+    margin-bottom: 10px;
 }
 
 .inner .service_display_pc {
@@ -269,7 +277,7 @@ img {
     width: 220px;
     margin: 0 auto;
     text-align: justify;
-    line-height: 1.2;
+    line-height: 1.8;
 }
 
 /* ワーク */
@@ -294,8 +302,9 @@ img {
 }
 
 .work_block_ttl {
-    width: 30%;
+    width: 25%;
     margin: -23px;
+    padding-bottom: 13px;
 }
 
 .work .work_wrap h3 {
@@ -364,8 +373,8 @@ img {
     height: 45px;
     margin: 0 auto;
     border: none;
-    border-radius: 25px;
-    margin-bottom: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
     padding: 0px 20px;
     box-sizing: border-box;
 }
@@ -376,7 +385,7 @@ img {
     height: 130px;
     margin: 0 auto;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     margin-bottom: 35px;
     padding: 20px 20px;
     box-sizing: border-box;
@@ -388,7 +397,7 @@ img {
     font-weight: 500;
     display: inline-block;
     padding: 8px 40px;
-    border-radius: 9999px;
+    border-radius: 5px;
     color: black;
     background-color: #ffeb7d;
     transition: 0.5s;
@@ -438,6 +447,14 @@ img {
     text-align: center;
     margin-bottom: 20px;
     color: #202020;
+}
+
+/* ページトップボタン */
+.pagetop {
+    position: fixed;
+    right: 35px;
+    bottom: 40px;
+    width: 45px;
 }
 
 /* 3本線 */
@@ -523,7 +540,7 @@ img {
 .sp_nav ul li {
     padding: 20px 0px;
     color: #fff;
-    font-size: 18px;
+    font-size: 23px;
     font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
         "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
@@ -536,7 +553,7 @@ img {
     }
 
     .inner {
-        width: 1100px;
+        max-width: 1100px;
         margin: 0 auto;
     }
 }
@@ -549,7 +566,7 @@ img {
 
     /* ファーストビュー */
     .main_visual {
-        background-image: url(../images/fv_sp.png);
+        background-image: url(../images/fv_sp@2x-100.jpg);
         background-repeat: no-repeat;
         background-position: center;
         height: calc(100vh - 200px);
@@ -581,6 +598,7 @@ img {
     /* アバウト */
     .about {
         margin: 30px auto 150px;
+        overflow: hidden;
     }
 
     .about .about_wrap {
@@ -647,13 +665,15 @@ img {
     }
 
     .about_image_mountain {
-        display: none;
+        width: 158vw;
+        max-width: 930px;
+        left: 0;
     }
 
     /* サービス */
     .service {
         background-image: url(../images/service_sp-100.jpg);
-        height: 160vw;
+        height: 175vw;
         padding-top: 8vw;
         margin-bottom: 3vw;
         background-color: rgba(255, 255, 255, 0.2);
@@ -742,11 +762,12 @@ img {
 
     .work_block_item {
         width: 75%;
-        margin-bottom: 30px;
+        margin-bottom: 45px;
     }
 
     .work_block_ttl {
         margin: 0 auto;
+        padding-bottom: 5px;
     }
 
     .work_block_item img {
@@ -798,5 +819,9 @@ img {
 
     .contact_image_mountain {
         margin: -10px;
+    }
+    /* ページトップボタン */
+    .pagetop {
+        width: 50px;
     }
 }
